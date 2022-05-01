@@ -1,0 +1,286 @@
+*{
+    box-sizing: border-box;
+    margin: 2px;
+    padding: 0px;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+body{
+    background-color: #ffb730c6;
+    color: #282750;
+
+    transition: background 0.2 linear;
+}
+
+body.dark{  
+    background-color: rgb(36, 35, 35);
+}
+
+.grand-container{
+    display: flex;
+    height: 80vh;
+    align-items: center;
+    justify-content: center;
+    margin: 100px;
+}
+
+.alinha-direita{
+    position: absolute;
+    top: 90px;
+    right: 90px;
+}
+
+.checkbox{
+    opacity: 0;
+    position: absolute;
+}
+
+.label{
+    background-color: #111;
+    border-radius: 50px;
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 5px;
+    position: relative;
+    height: 26px;
+    width: 50px;
+
+    transform: scale(1.5);
+}
+
+.label .ball{
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    
+    left: 0.3px;
+
+    height: 22px;
+    width: 22px;
+
+    transform: translateX(0px);
+    transition: transform 0.2s linear;
+}
+
+.checkbox:checked + .label .ball{
+    transform: translateX(24px);
+}
+
+.fa-moon{
+    color: #f1c40f;
+}
+
+.fa-sun{
+    color: #f39d12;
+}
+
+.container{
+    background-color: aliceblue;
+    font-size: 2.6rem;
+    padding: 40px;
+    border-radius: 20px;
+    height: 600px;
+    width: 400px;
+
+    box-shadow: -7px 5px 8px rgba(0, 0, 0, 0.588);
+    
+}
+
+.container.dark{
+    animation: color 0.9s infinite;   
+    color: black;
+}
+
+h1{
+    text-align: center;
+    font-size: 5rem;
+}
+
+.relogio{
+    text-align: center;
+    font-size: 5rem;
+    margin: 50px;
+}
+
+p{
+    text-align: center;
+}
+
+button{
+    padding: 0.5rem;
+    font-size: 2rem;
+    width: 90%;
+    margin: 20px 0;
+
+    border: none;
+    
+    outline: none;
+    position: relative;
+    height: 55px;
+    background-color: #086E7D;
+    font-size: 2.3rem;
+    color: #fff;
+    border-radius: 7px;
+    cursor: pointer;
+    box-shadow: -5px 5px #032c33;
+
+
+}
+
+button::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #024752;
+    z-index: -1;
+    border-radius: 7px;
+    transform: translateY(5px);
+}
+
+button:active{
+    transform: translateY(5px);
+}
+
+button:active::before{
+    transform: translateY(0);
+}
+
+button.dark{
+    text-decoration: none;
+    color: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 2.3rem;
+    padding: 10px 30px;
+    background-image: linear-gradient(120deg, #3a61fe, #d43afe);
+    border-radius: 20px;
+    animation:gradient 10s linear infinite;
+    position: relative;
+    cursor: pointer;
+    transition: transform 300ms;
+    box-shadow: 0px 0px 0px ;
+}
+
+button.dark::before{
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: inherit;
+    border-radius: inherit;
+    z-index: 15px;
+    left: 0;
+    filter: blur(100px);
+    opacity: 0.4;
+}
+
+.pausado{
+    color: red;
+}
+
+button.dark:hover{
+    transform: scale(1.09);
+}
+
+button.dark:active{
+    transform: translateY(5px);
+}
+
+li img{
+    width: 50px; 
+    float: right;
+    border-radius: 15px;
+}
+
+li{
+    list-style: none;
+}
+
+ul{
+    list-style: none;
+    margin-top: 3rem;
+    padding: 0;
+    display: flex;
+    gap: 0.5rem;
+    justify-content: center;
+    position: absolute;
+    right: 50%;
+    transform: translateX(50%);
+    bottom: 30px;
+}
+
+ul.dark{
+    background-color: aliceblue;
+    border-radius: 20px;
+}
+
+ img.git:hover, img.insta:hover, img.linkedin:hover{
+    width: 75px;
+    transition: 1s;
+}
+
+@keyframes gradient{
+    from{
+        filter: hue-rotate(0deg);
+    } 
+    to{
+        filter: hue-rotate(360deg);
+    }
+}
+
+@keyframes color{
+    0%{
+        box-shadow: rgb(11, 252, 103) -5px 5px;
+    }
+
+    25%{
+        box-shadow: rgb(8, 176, 114) -10px 10px;
+    }
+
+    50%{
+        box-shadow: rgba(0, 197, 148, 0.663) -15px 15px;
+    }
+
+    75%{
+        box-shadow: rgba(0, 175, 149, 0.515) -20px 20px;
+    }
+
+    100%{
+        box-shadow: rgba(17, 153, 142, 0.235) -25px 25px;
+    }
+}
+
+@media (max-width: 750px){
+    .container{
+        height: 500px;
+        width: 300px;
+    }
+
+    h1{
+        font-size: 4rem;
+    }
+
+    .relogio{
+        margin: 40px auto;
+        font-size: 4rem;
+    }
+
+    button{
+        margin: 10px;
+        font-size: 2rem;
+    }
+
+    .alinha-direita{
+        top: 15px;
+        right: 15px;
+    }
+}
